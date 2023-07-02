@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Search = (props) => {
+export const Input = (props) => {
   //size = sm|md|lg
   //variant = primary|secondary
   const { size, variant } = props;
@@ -26,8 +26,6 @@ export const Search = (props) => {
               </svg>
               <input
                 className="bg-primary-color hover:bg-primary-hover text-primary-buttonText m-1 p-2 text-sm rounded-xl placeholder-primary-buttonText focus:outline-none"
-                placeholder="Search"
-                type="search"
                 {...props}
               />
             </label>
@@ -51,7 +49,6 @@ export const Search = (props) => {
               </svg>
               <input
                 className="bg-primary-color hover:bg-primary-hover text-primary-buttonText m-1 py-2 px-3 text-lg rounded-2xl placeholder-primary-buttonText focus:outline-none"
-                placeholder="Search"
                 {...props}
               />
             </label>
@@ -75,7 +72,6 @@ export const Search = (props) => {
               </svg>
               <input
                 className="bg-primary-color hover:bg-primary-hover text-primary-buttonText m-1 py-3 px-4 text-2xl rounded-3xl placeholder-primary-buttonText focus:outline-none"
-                placeholder="Search"
                 {...props}
               />
             </label>
@@ -105,7 +101,6 @@ export const Search = (props) => {
               </svg>
               <input
                 className="bg-secondary-color hover:bg-secondary-hover text-secondary-buttonText m-1 p-2 text-sm rounded-xl placeholder-primary-buttonText focus:outline-none"
-                placeholder="Search"
                 {...props}
               />
             </label>
@@ -129,7 +124,6 @@ export const Search = (props) => {
               </svg>
               <input
                 className="bg-secondary-color hover:bg-secondary-hover  text-secondary-buttonText m-1 py-2 px-3 text-lg rounded-2xl placeholder-primary-buttonText focus:outline-none"
-                placeholder="Search"
                 {...props}
               />
             </label>
@@ -153,7 +147,6 @@ export const Search = (props) => {
               </svg>
               <input
                 className="bg-secondary-color hover:bg-secondary-hover text-secondary-buttonText m-1 py-3 px-4 text-2xl rounded-3xl placeholder-primary-buttonText focus:outline-none"
-                placeholder="Search"
                 {...props}
               />
             </label>
