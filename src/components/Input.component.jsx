@@ -100,7 +100,7 @@ export const Input = (props) => {
                 />
               </svg>
               <input
-                className="bg-secondary-color hover:bg-secondary-hover text-secondary-buttonText m-1 p-2 text-sm rounded-xl placeholder-primary-buttonText focus:outline-none"
+                className="bg-secondary-color hover:bg-secondary-hover text-secondary-buttonText m-1 p-2 text-sm rounded-xl placeholder-secondary-buttonText focus:outline-none"
                 {...props}
               />
             </label>
@@ -123,7 +123,7 @@ export const Input = (props) => {
                 />
               </svg>
               <input
-                className="bg-secondary-color hover:bg-secondary-hover  text-secondary-buttonText m-1 py-2 px-3 text-lg rounded-2xl placeholder-primary-buttonText focus:outline-none"
+                className="bg-secondary-color hover:bg-secondary-hover  text-secondary-buttonText m-1 py-2 px-3 text-lg rounded-2xl placeholder-secondary-buttonText focus:outline-none"
                 {...props}
               />
             </label>
@@ -146,7 +146,7 @@ export const Input = (props) => {
                 />
               </svg>
               <input
-                className="bg-secondary-color hover:bg-secondary-hover text-secondary-buttonText m-1 py-3 px-4 text-2xl rounded-3xl placeholder-primary-buttonText focus:outline-none"
+                className="bg-secondary-color hover:bg-secondary-hover text-secondary-buttonText m-1 py-3 px-4 text-2xl rounded-3xl placeholder-secondary-buttonText focus:outline-none"
                 {...props}
               />
             </label>
