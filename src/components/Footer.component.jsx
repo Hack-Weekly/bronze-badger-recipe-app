@@ -1,13 +1,3 @@
-// import React from 'react';
-
-// const Footer = () => {
-//   return (<footer>
-//     <p>this is a footer</p>
-//   </footer>)
-// };
-
-// export default Footer;
-
 import React from "react";
 
 const Footer = () => {
@@ -15,12 +5,12 @@ const Footer = () => {
     <footer className="bg-primary-color py-4 w-screen">
         <div className="flex justify-between items-center">
           <div>
-            <p className="text-white mx-4">
+            <p className="text-primary-buttonText mx-4">
               To <b>Hack Weekly</b>
             </p>
           </div>
           <div>
-            <p className="text-white mx-4">Made by Bronze Badger</p>
+            <p className="text-primary-buttonText mx-4">Made by Bronze Badger</p>
           </div>
         </div>
     </footer>
