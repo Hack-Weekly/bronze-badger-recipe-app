@@ -39,16 +39,16 @@ const Carousel = ({ images }) => {
   };
 
   return (
-    <div className="relative">
-      <img className="w-full h-24" src={images[currentImage]} alt="Carousel" />
+    <div className="relative h-1/4 flex flex-col justify-center p-2 bg-primary-color-light dark:bg-primary-color-dark rounded-xl">
+      <img className="w-full h-28" src={images[currentImage]} alt="Carousel" />
       <button
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-opacity-0 text-primary-buttonText  px-2 py-1 rounded-full opacity-70 text-3xl"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-opacity-0 text-primary-text-light  px-2 py-1 rounded-full opacity-70 text-3xl"
         onClick={prevImage}
       >
         &larr;
       </button>
       <button
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-opacity-0 text-primary-buttonText px-2 py-1 rounded-full opacity-70 text-3xl"
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-opacity-0 text-primary-text-light px-2 py-1 rounded-full opacity-70 text-3xl"
         onClick={nextImage}
       >
         &rarr;
@@ -60,8 +60,8 @@ const Carousel = ({ images }) => {
               key={index}
               className={`transition-all h-3 w-3 mx-1 rounded-full ${
                 index === currentImage
-                  ? "bg-primary-color p-2"
-                  : "bg-secondary-color bg-opacity-75"
+                  ? "bg-primary-text-light p-2"
+                  : "bg-secondary-color-light dark:bg-secondary-color-dark bg-opacity-75"
               }`}
             />
           ))}

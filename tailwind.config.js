@@ -7,8 +7,8 @@ export default {
       dropShadow:{
         darkMd: ['0 4px 3px rgba(121, 55, 178, 0.10)', 
         '0 2px 2px rgba(121, 55, 178, 0.15)'],
-        dark2xl: ['0 20px 13px rgba(121, 55, 178, 0.10)', 
-        '0 8px 5px rgba(121, 55, 178, 0.15)']
+        dark2xl: ['0 30px 19px rgba(121, 55, 178, 0.10)', 
+        '0 18px 15px rgba(161, 95, 218, 0.15)']
       },
       fontFamily:{
         'Marker': 'Permanent Marker',
