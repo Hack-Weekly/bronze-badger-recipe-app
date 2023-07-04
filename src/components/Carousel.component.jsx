@@ -40,7 +40,7 @@ const Carousel = ({ images }) => {
 
   return (
     <div className="relative">
-      <img className="w-full" src={images[currentImage]} alt="Carousel" />
+      <img className="w-full h-24" src={images[currentImage]} alt="Carousel" />
       <button
         className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-opacity-0 text-primary-buttonText  px-2 py-1 rounded-full opacity-70 text-3xl"
         onClick={prevImage}

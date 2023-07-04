@@ -1,11 +1,17 @@
+import { Fragment } from "react";
 import "./App.css";
 import Footer from "./components/Footer.component";
+import { Navbar } from "./components/Navbar.component";
 
 function App() {
   return (
-    <>
-      <main className="flex justify-center items-center w-screen h-screen bg-background"></main>
-    </>
+    <Fragment >
+      <Navbar/>
+      <main>
+      
+      </main>
+        <Footer/>
+    </Fragment>
   );
 }
 

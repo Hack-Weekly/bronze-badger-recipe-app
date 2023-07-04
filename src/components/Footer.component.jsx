@@ -2,15 +2,15 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary-color py-4 w-screen">
+    <footer className="bg-primary-color-light dark:bg-primary-color-dark py-5 w-screen mt-auto">
         <div className="flex justify-between items-center">
           <div>
-            <p className="text-primary-buttonText mx-4">
+            <p className="text-primary-text-light dark:text-primary-text-dark mx-4">
               To <b>Hack Weekly</b>
             </p>
           </div>
           <div>
-            <p className="text-primary-buttonText mx-4">Made by Bronze Badger</p>
+            <p className="text-primary-text-light dark:text-primary-text-dark mx-4">Made by Bronze Badger</p>
           </div>
         </div>
     </footer>
