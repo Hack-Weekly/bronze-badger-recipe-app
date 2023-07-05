@@ -1,5 +1,5 @@
 import "./App.css";
-import CardContainer from "./components/CardContainer.component";
+import CardContainer from "./UI/CardContainer.component";
 import React, { useState, useEffect, useRef } from "react";
 import Search from "./components/Search.component";
 import axios from "axios";
@@ -13,7 +13,7 @@ function App() {
   // const [tempDrinks, setTempDrinks] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchSampleData = async () => {
       try {
         const response = await axios.get(
           "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
@@ -24,7 +24,7 @@ function App() {
       }
     };
 
-    fetchData();
+    fetchSampleData();
   }, []);
 
   useEffect(() => {
