@@ -18,10 +18,10 @@ export default {
         primary:{
           color:{
             light:'#FF4F0F',
-            dark:'#642E94'},
+            dark:'#282a36'},
           hover: {
             light:'#ff6f3c',
-            dark:'#8d4bc6'},
+            dark:'#a36898'},
           text: {
             light:'#F3F5F6',
             dark:'#F3F5F6'},
@@ -29,7 +29,7 @@ export default {
         secondary: {
           color:{
             light:'#ff6f3c',
-            dark:'#8d4bc6'},
+            dark:'#c05c96'},//c05c96
           hover:{
             light:'#ffa382',
             dark:''},
@@ -37,10 +37,10 @@ export default {
             light:'#ff4f0f',
             dark:'#642E94'},
         },
-        cardBg:'#400570',
+        cardBg:'#282a36',
         background:{
           light: '#E3EAED',
-          dark: '#2F4858'
+          dark: '#191a21'
         },
       },
     },
