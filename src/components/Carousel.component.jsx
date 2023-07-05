@@ -40,7 +40,7 @@ const Carousel = ({ images }) => {
 
   return (
     <div className="relative h-1/4 flex flex-col justify-center p-2 bg-primary-color-light dark:bg-primary-color-dark rounded-xl">
-      <img className="w-full h-28" src={images[currentImage]} alt="Carousel" />
+      <img className="w-32 h-32 m-auto" src={images.length ===0 ? '/cocktail.svg' : images[currentImage]} alt="Carousel" />
       <button
         className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-opacity-0 text-primary-text-light  px-2 py-1 rounded-full opacity-70 text-3xl"
         onClick={prevImage}
