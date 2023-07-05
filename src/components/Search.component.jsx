@@ -38,22 +38,22 @@ const Search = ((props) => {
             onChange={typeChangeHandler}
           >
             <option disabled="disabled" selected="selected">{`------${searchType}------`}</option>
-            <optgroup label='Search'>
-              <option value={'1a'}>by cocktail name</option>
-              <option value={'1b'}>by ingredient name</option>
+            <optgroup label='Search by'>
+              <option value={'1a'}>cocktail name</option>
+              <option value={'1b'}>ingredient name</option>
             </optgroup>
-            <optgroup label='Lookup'>
-              <option value={'2a'}>by cocktail id</option>
-              <option value={'2b'}>by ingredient id</option>
+            <optgroup label='Lookup by'>
+              <option value={'2a'}>cocktail id</option>
+              <option value={'2b'}>ingredient id</option>
             </optgroup>
-            <optgroup label='Filter'>
-              <option value={'3a'}>by ingredient</option>
-              <option value={'3b'}>by category</option>
-              <option value={'3c'}>by glass</option>
+            <optgroup label='Filter by'>
+              <option value={'3a'}>ingredient</option>
+              <option value={'3b'}>category</option>
+              <option value={'3c'}>glass</option>
             </optgroup>
           </select>
         <button onClick={clickHandler} type="submit">GO</button>
-        <button>Surprise Me!</button>
+        <button onClick={props.onClick}>Surprise Me!</button>
         </div>
       </div>
     </>
