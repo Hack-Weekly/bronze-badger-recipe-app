@@ -1,37 +1,31 @@
-// import React from 'react';
-// import Card from './Card';
-
-// const Modal = (props) => {
-//   return (
-//     <div>
-//       <div className="fixed inset-0 bg-black opacity-75" onClick={props.onConfirm}></div>
-//       <Card className="fixed top-30vh left-10% w-80% z-50 overflow-hidden">
-//         <header className="bg-purple-900 p-4">
-//           <h2 className="m-0 text-white">{props.title}</h2>
-//         </header>
-//         <div className="p-4">
-//           <p>{props.message}</p>
-//         </div>
-//         <footer className="p-4 flex justify-end">
-//           <button onClick={props.onConfirm}>Okay</button>
-//         </footer>
-//       </Card>
-//     </div>
-//   );
-// };
-
-// export default Modal;
-
-import React, {useEffect, useRef} from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Modal = (props) => {
+  const [cocktailDetails, setCocktailDetails] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
+  // const [measures, setMeasures] = useState([]);
+
+  useEffect(() => {
+    const getCocktailDetails = async () => {
+      try {
+        const response = await axios.get(
+          `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${props.id}`
+        );
+        setCocktailDetails(response.data.drinks);
+        // set ingredient lookup array to be empty if plan to add one
+      } catch (error) {
+        console.log("Error: ", error);
+      }
+    };
+
+    getCocktailDetails();
+  }, []);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="fixed inset-0 bg-primary-bodyText opacity-50"></div>
-      <div
-        className="bg-background p-4 rounded-lg shadow-lg relative min-h-[300px] min-w-[300px] max-h-[500px] max-w-[500px] transition-all transform duration-2000 ease-in-out modal-slide-up"
-      >
+      <div className="bg-background p-4 rounded-lg shadow-lg relative min-h-[300px] min-w-[300px] max-h-[500px] max-w-[500px] transition-all transform duration-2000 ease-in-out modal-slide-up">
         <button
           className="absolute top-0 right-0 m-2 p-2 rounded-full text-secondary-bodyText hover:bg-secondary-bodyText"
           onClick={props.onConfirm}
@@ -47,10 +41,18 @@ const Modal = (props) => {
             />
           </svg>
         </button>
-        <h2 className="p-5 font-semibold text-3xl">{props.title}</h2>
-        <p className="p-4">{props.a}</p>
-        <p className="p-4">{props.cat}</p>
-        <p className="p-4">{props.ins}</p>
+        {cocktailDetails.length > 0 ? (
+          <div>
+            <h2 className="p-5 font-semibold text-3xl">
+              {cocktailDetails[0].strDrink}
+            </h2>
+            <p className="p-4">{cocktailDetails[0].strAlcoholic}</p>
+            <p className="p-4">{cocktailDetails[0].strCategory}</p>
+            <p className="p-4">{cocktailDetails[0].strInstructions}</p>
+          </div>
+        ) : (
+          <div>Loading...</div>
+        )}
       </div>
     </div>
   );

@@ -141,13 +141,15 @@ function App() {
       </div>
 
       <div>
-        {cocktails.length > 0 ? (
+        {/* {<div><p>Nothing found...</p></div>} */ /*show this if anything is null */}
+        {cocktails.length > 0 || ingredients.length > 0 ? (
           <div>
             <CardContainer cocktails={cocktails} ingredients={ingredients} />
           </div>
         ) : (
           <div>
-            <CardContainer cocktails={cocktails} ingredients={ingredients} />
+            {/* <CardContainer cocktails={cocktails} ingredients={ingredients} /> */}
+            <p>Loading...</p>
           </div>
         )}
       </div>
