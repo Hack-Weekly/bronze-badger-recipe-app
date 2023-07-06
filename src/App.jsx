@@ -35,9 +35,7 @@ function App() {
         <Carousel images={[]} />
         <div className="flex flex-wrap overflow-x-auto justify-around">
           {cocktails.length > 0 ? (
-            <div>
               <CardContainer cocktails={cocktails} />
-            </div>
           ) : (
             <div>Loading...</div>
           )}
