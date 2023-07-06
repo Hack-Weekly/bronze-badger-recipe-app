@@ -23,8 +23,6 @@ const Modal = (props) => {
   }, []);
 
   useEffect(() => {
-    // console.log(cocktailDetails[0]['strIngredient1']);
-    // just extract ingredients and measures
     if (cocktailDetails.length > 0) {
       let ings = [];
       let ing = "strIngredient";
@@ -49,9 +47,6 @@ const Modal = (props) => {
 
       setIngredients(ings);
       setMeasures(measures);
-
-      // console.log(ings);
-      // console.log(measures);
     }
   }, [cocktailDetails]);
 
@@ -79,7 +74,7 @@ const Modal = (props) => {
         </button>
         {cocktailDetails.length > 0 ? (
           <div>
-            <h2 className="m-5 font-semibold text-3xl">
+            <h2 className="mx-5 mb-5 mt-3 font-semibold text-3xl">
               {cocktailDetails[0].strDrink}
             </h2>
             <p className="mx-5">{cocktailDetails[0].strAlcoholic}</p>
@@ -118,7 +113,9 @@ const Modal = (props) => {
               </tbody>
             </table>
             <h3 className="font-medium mt-5 mx-5 text-xl">Instructions</h3>
-            <p className="mx-5">{cocktailDetails[0].strInstructions}</p>
+            <div className="overflow-auto h-32 mb-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']">
+              <p className="mx-5">{cocktailDetails[0].strInstructions}</p>
+            </div>
           </div>
         ) : (
           <div>Loading...</div>

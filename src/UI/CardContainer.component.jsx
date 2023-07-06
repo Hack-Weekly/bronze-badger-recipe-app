@@ -1,15 +1,7 @@
-import React, {
-  useState,
-  useContext,
-  useEffect,
-  useCallback,
-  useMemo,
-  useRef,
-} from "react";
+import React, { useState } from "react";
 import { CocktailCard } from "./CocktailCard.component";
 import { IngredientCard } from "./IngredientCard";
-import Modal from "./Modal";
-import axios from "axios";
+import Modal from "./Modal.component";
 
 const CardContainer = (props) => {
   const [modalActive, setModalActive] = useState();
@@ -18,16 +10,6 @@ const CardContainer = (props) => {
   const clickHandler = async (DRINK_ID) => {
     setSelected(DRINK_ID);
     setModalActive(true);
-
-    // try {
-    //   const response = await axios.get(
-    //     `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${DRINK_ID}`
-    //   );
-    //   setCocktailDetails(response.data.drinks);
-    //   console.log(cocktailDetails[0]);
-    // } catch (error) {
-    //   console.log("Error: ", error);
-    // }
   };
 
   const hideModal = () => {
@@ -37,17 +19,7 @@ const CardContainer = (props) => {
   return (
     <div className="flex container mx-auto py-8 justify-center">
       <div className="grid grid-cols-4 gap-4">
-        {modalActive && (
-          <Modal
-            // title={modalActive.title}
-            // a={modalActive.a}
-            // cat={modalActive.cat}
-            // ins={modalActive.ins}
-            // details={cocktailDetails[0]}
-            id={selected}
-            onConfirm={hideModal}
-          />
-        )}
+        {modalActive && <Modal id={selected} onConfirm={hideModal} />}
         {props.cocktails === null || props.ingredients === null ? (
           <div>Nothing found...</div>
         ) : props.cocktails.length > 0 ? (

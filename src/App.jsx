@@ -30,7 +30,6 @@ function App() {
   useEffect(() => {
     const getData = async () => {
       if (queryType === "1a") {
-        console.log("searched in 1a");
         try {
           const response = await axios.get(
             `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${queryInput}`
@@ -41,7 +40,6 @@ function App() {
           console.error("Error: ", error);
         }
       } else if (queryType === "1b") {
-        console.log("searched in 1b");
         try {
           const response = await axios.get(
             `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${queryInput}`
@@ -51,9 +49,7 @@ function App() {
         } catch (error) {
           console.error("Error: ", error);
         }
-      } 
-      else if (queryType === "2a") {
-        console.log("searched in 2a");
+      } else if (queryType === "2a") {
         try {
           const response = await axios.get(
             `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${queryInput}`
@@ -63,9 +59,7 @@ function App() {
         } catch (error) {
           console.error("Error: ", error);
         }
-      }
-      else if (queryType === "2b") {
-        console.log("searched in 2b");
+      } else if (queryType === "2b") {
         try {
           const response = await axios.get(
             `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=${queryInput}`
@@ -75,9 +69,7 @@ function App() {
         } catch (error) {
           console.error("Error: ", error);
         }
-      }
-      else if (queryType === "3a") {
-        console.log("searched in 3a");
+      } else if (queryType === "3a") {
         try {
           const response = await axios.get(
             `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${queryInput}`
@@ -87,9 +79,7 @@ function App() {
         } catch (error) {
           console.error("Error: ", error);
         }
-      }
-      else if (queryType === "3b") {
-        console.log("searched in 3b");
+      } else if (queryType === "3b") {
         try {
           const response = await axios.get(
             `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${queryInput}`
@@ -99,9 +89,7 @@ function App() {
         } catch (error) {
           console.error("Error: ", error);
         }
-      }
-      else if (queryType === "3c") {
-        console.log("searched in 3c");
+      } else if (queryType === "3c") {
         try {
           const response = await axios.get(
             `https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${queryInput}`
@@ -141,16 +129,17 @@ function App() {
       </div>
 
       <div>
-        {/* {<div><p>Nothing found...</p></div>} */ /*show this if anything is null */}
-        {cocktails.length > 0 || ingredients.length > 0 ? (
-          <div>
-            <CardContainer cocktails={cocktails} ingredients={ingredients} />
-          </div>
-        ) : (
-          <div>
-            {/* <CardContainer cocktails={cocktails} ingredients={ingredients} /> */}
-            <p>Loading...</p>
-          </div>
+        { (
+          cocktails.length > 0 || ingredients.length > 0 ? (
+            <div>
+              <CardContainer cocktails={cocktails} ingredients={ingredients} />
+            </div>
+          ) : (
+            <div>
+              {/* <CardContainer cocktails={cocktails} ingredients={ingredients} /> */}
+              <p>Loading...</p>
+            </div>
+          )
         )}
       </div>
     </>
@@ -158,3 +147,8 @@ function App() {
 }
 
 export default App;
+// cocktails === null || ingredients === null ? (
+//           <div>
+//             <p>Nothing found...</p>
+//           </div>
+//         ) :
