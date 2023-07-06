@@ -25,7 +25,7 @@ export const Input = (props) => {
                 />
               </svg>
               <input
-                className="bg-primary-color hover:bg-primary-hover text-primary-buttonText m-1 p-2 text-sm rounded-xl placeholder-primary-buttonText focus:outline-none"
+                className="inp-primary m-1 p-2 text-sm rounded-xl"
                 {...props}
               />
             </label>
@@ -48,7 +48,7 @@ export const Input = (props) => {
                 />
               </svg>
               <input
-                className="bg-primary-color hover:bg-primary-hover text-primary-buttonText m-1 py-2 px-3 text-lg rounded-2xl placeholder-primary-buttonText focus:outline-none"
+                className="inp-primary m-1 py-2 px-3 text-lg rounded-2xl"
                 {...props}
               />
             </label>
@@ -71,7 +71,7 @@ export const Input = (props) => {
                 />
               </svg>
               <input
-                className="bg-primary-color hover:bg-primary-hover text-primary-buttonText m-1 py-3 px-4 text-2xl rounded-3xl placeholder-primary-buttonText focus:outline-none"
+                className="inp-primary m-1 py-3 px-4 text-2xl rounded-3xl"
                 {...props}
               />
             </label>
@@ -90,7 +90,7 @@ export const Input = (props) => {
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
-                stroke="#000000"
+                stroke="#EBEBEB"
                 class="pointer-events-none w-6 h-6 absolute top-1/2 transform -translate-y-1/2 right-3"
               >
                 <path
@@ -100,7 +100,7 @@ export const Input = (props) => {
                 />
               </svg>
               <input
-                className="bg-secondary-color hover:bg-secondary-hover text-secondary-buttonText m-1 p-2 text-sm rounded-xl placeholder-secondary-buttonText focus:outline-none"
+                className="inp-secondary m-1 p-[6px] text-sm rounded-xl"
                 {...props}
               />
             </label>
@@ -113,7 +113,7 @@ export const Input = (props) => {
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
-                stroke="#000000"
+                stroke="#EBEBEB"
                 class="pointer-events-none w-8 h-8 absolute top-1/2 transform -translate-y-1/2 right-3"
               >
                 <path
@@ -123,7 +123,7 @@ export const Input = (props) => {
                 />
               </svg>
               <input
-                className="bg-secondary-color hover:bg-secondary-hover  text-secondary-buttonText m-1 py-2 px-3 text-lg rounded-2xl placeholder-secondary-buttonText focus:outline-none"
+                className="inp-secondary m-1 py-[6px] px-[11px] text-lg rounded-2xl"
                 {...props}
               />
             </label>
@@ -136,7 +136,7 @@ export const Input = (props) => {
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
-                stroke="#000000"
+                stroke="#EBEBEB"
                 class="pointer-events-none w-10 h-10 absolute top-1/2 transform -translate-y-1/2 right-3"
               >
                 <path
@@ -146,7 +146,7 @@ export const Input = (props) => {
                 />
               </svg>
               <input
-                className="bg-secondary-color hover:bg-secondary-hover text-secondary-buttonText m-1 py-3 px-4 text-2xl rounded-3xl placeholder-secondary-buttonText focus:outline-none"
+                className="inp-secondary m-1 py-[11px] px-[15px] text-2xl rounded-3xl"
                 {...props}
               />
             </label>
