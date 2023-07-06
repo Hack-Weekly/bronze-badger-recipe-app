@@ -4,7 +4,7 @@ import axios from "axios";
 const Modal = (props) => {
   const [cocktailDetails, setCocktailDetails] = useState([]);
   const [ingredients, setIngredients] = useState([]);
-  // const [measures, setMeasures] = useState([]);
+  const [measures, setMeasures] = useState([]);
 
   useEffect(() => {
     const getCocktailDetails = async () => {
@@ -22,9 +22,45 @@ const Modal = (props) => {
     getCocktailDetails();
   }, []);
 
+  useEffect(() => {
+    // console.log(cocktailDetails[0]['strIngredient1']);
+    // just extract ingredients and measures
+    if (cocktailDetails.length > 0) {
+      let ings = [];
+      let ing = "strIngredient";
+      let i = 1;
+      while (i <= 15) {
+        ings.push(cocktailDetails[0][ing + i]);
+        i++;
+      }
+
+      let measures = [];
+      let measure = "strMeasure";
+      i = 1;
+      while (i <= 15) {
+        measures.push(cocktailDetails[0][measure + i]);
+        i++;
+      }
+
+      let nullIndexIngredient = ings.indexOf(null);
+      let nullIndexMeasures = measures.indexOf(null);
+      ings = ings.slice(0, nullIndexIngredient);
+      measures = measures.slice(0, nullIndexMeasures);
+
+      setIngredients(ings);
+      setMeasures(measures);
+
+      // console.log(ings);
+      // console.log(measures);
+    }
+  }, [cocktailDetails]);
+
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
-      <div className="fixed inset-0 bg-primary-bodyText opacity-50"></div>
+      <div
+        className="fixed inset-0 bg-primary-bodyText opacity-75"
+        onClick={props.onConfirm}
+      ></div>
       <div className="bg-background p-4 rounded-lg shadow-lg relative min-h-[300px] min-w-[300px] max-h-[500px] max-w-[500px] transition-all transform duration-2000 ease-in-out modal-slide-up">
         <button
           className="absolute top-0 right-0 m-2 p-2 rounded-full text-secondary-bodyText hover:bg-secondary-bodyText"
@@ -43,12 +79,46 @@ const Modal = (props) => {
         </button>
         {cocktailDetails.length > 0 ? (
           <div>
-            <h2 className="p-5 font-semibold text-3xl">
+            <h2 className="m-5 font-semibold text-3xl">
               {cocktailDetails[0].strDrink}
             </h2>
-            <p className="p-4">{cocktailDetails[0].strAlcoholic}</p>
-            <p className="p-4">{cocktailDetails[0].strCategory}</p>
-            <p className="p-4">{cocktailDetails[0].strInstructions}</p>
+            <p className="mx-5">{cocktailDetails[0].strAlcoholic}</p>
+            <p className="mx-5">{cocktailDetails[0].strCategory}</p>
+            <table>
+              <h3 className="font-medium mt-5 mx-5 text-xl">
+                Ingredients required
+              </h3>
+              <tbody>
+                <tr>
+                  <td>
+                    <ul className=" mx-12">
+                      {ingredients.map((ingredient) => (
+                        <li
+                          key={Math.random().toString()}
+                          className="list-disc"
+                        >
+                          {ingredient}
+                        </li>
+                      ))}
+                    </ul>
+                  </td>
+                  <td>
+                    <ul className=" mx-12">
+                      {measures.map((measure) => (
+                        <li
+                          key={Math.random().toString()}
+                          className="list-none"
+                        >
+                          {measure}
+                        </li>
+                      ))}
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <h3 className="font-medium mt-5 mx-5 text-xl">Instructions</h3>
+            <p className="mx-5">{cocktailDetails[0].strInstructions}</p>
           </div>
         ) : (
           <div>Loading...</div>
