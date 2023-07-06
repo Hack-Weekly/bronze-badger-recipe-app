@@ -5,10 +5,6 @@ import { Modal } from './Modal.component'
 const domElement = document.getElementById('root')
 
 export const Card = (props) => {
-  
-  // for (const [key, value] of Object.entries(props.cocktail)) {
-  //   console.log(`${key}: ${value}`);
-  // }
   const [stateModal, setStateModal] = useState(false);
   const openModal = () => setStateModal(true);
   const closeModal = () =>{
