@@ -124,7 +124,7 @@ function App() {
 
   return (
     <>
-      <div className="mx-4 my-4 max-w-screen-md">
+      <div className="m-auto w-[500px]">
         <Search query={handleSearchType} onClick={getRandom} />
       </div>
 
