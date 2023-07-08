@@ -9,7 +9,7 @@ import axios from "axios";
 import { DrinkContext } from "./context/drinks.context";
 
 function App() {
-  const {drinkName} = useContext(DrinkContext)
+  const {drinkName,setDrinkCarouselImgUrl,drinkCarouselImgUrl} = useContext(DrinkContext)
   const [cocktails, setCocktails] = useState([]);
 
   useEffect(() => {
@@ -19,20 +19,24 @@ function App() {
           `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkName}`
         );
         setCocktails(data.drinks.slice(0, 20));
-          console.log(data);
+        data.drinks.slice(0,10).map(el=>{
+          setDrinkCarouselImgUrl(prev=>{
+            return [...prev,el.strDrinkThumb]
+          })
+        })
       } catch (error) {
         console.error("Error: ", error);
       }
     };
-
+    
+    setDrinkCarouselImgUrl([])
     fetchData();
   }, [drinkName]);
-
   return (
     <Fragment>
       <Navbar />
       <main className="h-full overflow-x-auto p-5">
-        <Carousel images={[]} />
+        <Carousel images={drinkCarouselImgUrl} />
         <div className="flex flex-wrap overflow-x-auto justify-around">
           {cocktails.length > 0 ? (
               <CardContainer cocktails={cocktails} />
