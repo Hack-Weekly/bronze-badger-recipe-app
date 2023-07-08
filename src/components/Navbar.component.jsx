@@ -12,7 +12,6 @@ export const Navbar = () => {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      console.log(inputValue);
       setDrinkName(inputValue);
     }, 500);
     return () => clearTimeout(timeoutId);

@@ -20,7 +20,6 @@ export const Modal = (props) => {
     const {closebtn,cocktail} = props
     const {strDrink,strAlcoholic,strCategory,strInstructions,strDrinkThumb} = cocktail
     const ingredients = transformObjectToArray(cocktail)
-    console.log(ingredients);
     
   return (
     <div className="absolute w-full h-full bg-slate-900/80 flex flex-col items-center justify-center" onClick={closebtn}>
@@ -34,7 +33,7 @@ export const Modal = (props) => {
                 <ul className='text-xl w-2/3 flex flex-col items-center'>
                     {ingredients.map(el=>{
                         if(!!el[1]){
-                            return (<li>{`${el[0]}: ${el[1]}`}</li>)
+                            return (<li key={`${el[0]}${el[1]}`}>{`${el[0]}: ${el[1]}`}</li>)
                         }
                         return(<li>{el[0]}</li>)
                     })}
