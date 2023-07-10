@@ -40,7 +40,7 @@ const Carousel = ({ images }) => {
 
   return (
     <div className="relative h-1/4 flex flex-col justify-center p-2 bg-primary-color-light dark:bg-primary-color-dark rounded-xl">
-      <img className="w-32 h-32 m-auto" src={images.length ===0 ? '/cocktail.svg' : images[currentImage]} alt="Carousel" />
+      <img className="w-24 h-24 md:w-32 md:h-32 m-auto" src={images.length ===0 ? '/cocktail.svg' : images[currentImage]} alt="Carousel" />
       <button
         className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-opacity-0 text-primary-text-light  px-2 py-1 rounded-full opacity-70 text-3xl"
         onClick={prevImage}
@@ -58,7 +58,7 @@ const Carousel = ({ images }) => {
           {images.map((_, index) => (
             <div
               key={index}
-              className={`transition-all h-3 w-3 mx-1 rounded-full ${
+              className={`transition-all h-2 w-2 md:h-3 md:w-3 mx-1 rounded-full ${
                 index === currentImage
                   ? "bg-primary-text-light p-2"
                   : "bg-secondary-color-light dark:bg-secondary-color-dark bg-opacity-75"
